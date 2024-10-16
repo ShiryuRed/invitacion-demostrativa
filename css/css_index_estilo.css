@@ -772,11 +772,7 @@ body.dark{
 
 /*/////////////////Timeline////////////////*/
 
-.prueba-back {
-	background-image: url(https://th.bing.com/th/id/OIP.ObCtUAu2jd69zrNhrBvRfQHaD3?w=322&h=180&c=7&r=0&o=5&dpr=1.3&pid=1.7);
-	height: 200px;
-	background-attachment: fixed;
-}
+
 
 /*/////////////////Background Image////////////////*/
 .background__image,
@@ -786,8 +782,8 @@ body.dark{
 .background__image-5, 
 .background__image-6 {
 	height: 400px;
-	width: 100%;
-	background-attachment: fixed;
+	width: 100vw;
+	background-attachment: scroll;
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
