@@ -1,3 +1,34 @@
+const loader = document.querySelector(".loader-container");
+const showInvitContainer = document.querySelector(".show-invit-container");
+const showInvit = document.querySelector(".show-invit");
+
+body.classList.add('no-scroll');
+
+
+function hiddenLoader() {
+  loader.classList.add("hidden-loader")
+}
+function removeLoader() {
+  loader.innerHTML = ' ';
+  loader.setAttribute("hidden", "");
+}
+showInvitContainer.addEventListener('click', (e)=> {
+  showInvitContainer.classList.add('show');
+  body.classList.remove('no-scroll');
+  musicStart();
+  setTimeout(function(){
+    showInvitContainer.setAttribute('hidden', true)
+  },2000)
+})
+
+setTimeout(function(){
+  hiddenLoader();
+},3000)
+setTimeout(function(){
+  removeLoader();
+},4000)
+
+
 const iconOpen = document.querySelector(".i__open");
 
 const iconClose = document.querySelector(".i__close");
@@ -20,14 +51,14 @@ for (let i = 0; i < aMenu.length; i++) {
 function openMenu(){
   iconClose.style.transform = "scale(1)";
   iconOpen.style.transform = "scale(0)";
-  navMenu.classList.toggle("nav__open");
+  navMenu.classList.add("nav__open");
   menuOn = true;
 }
 
 function closeMenu(){
   iconClose.style.transform = "scale(0)";
   iconOpen.style.transform = "scale(1)";
-  navMenu.classList.toggle("nav__open");
+  navMenu.classList.remove("nav__open");
   menuOn = false;
 }
 
@@ -74,15 +105,15 @@ const audioControlOn = () => {
 }*/
 
 const audioControlOff = () => {
-  audioPlay.classList.toggle("mute");
+  audioPlay.classList.add("mute");
   audio.pause();
   audio2.pause();
-  audioStop.classList.toggle("play");
+  audioStop.classList.remove("play");
 }
 const audioControlOn = () => {
-  audioStop.classList.toggle("play");
+  audioStop.classList.add("play");
   audio.play();
-  audioPlay.classList.toggle("mute");
+  audioPlay.classList.remove("mute");
 }
 
 audioPlay.addEventListener("click", (e)=>{

@@ -1,20 +1,4 @@
 
-const loader = document.querySelector(".loader-container");
-
-function hiddenLoader() {
-  loader.classList.add("hidden-loader")
-}
-function removeLoader() {
-  loader.innerHTML = ' ';
-  loader.setAttribute("hidden", "");
-}
-
-setTimeout(function(){
-  hiddenLoader();
-},3000)
-setTimeout(function(){
-  removeLoader();
-},4000)
 
 const wrapper2 = document.getElementById("tiles");
 

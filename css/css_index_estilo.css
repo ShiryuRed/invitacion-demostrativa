@@ -46,6 +46,29 @@ a {
 .no-scroll {
 	overflow: hidden;
 }
+/*Ver invitacion*/
+.show-invit-container {
+	background-color: #ffffff3b;
+	backdrop-filter: blur(10px);
+	-webkit-backdrop-filter: blur(10px);
+	position: fixed;
+	height: 100vh;
+	width: 100vw;
+	z-index: 300;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	transition: transform 1s;
+	transform: translateY(0%);
+}
+.show {
+	transform: translateY(-100%);
+}
+.show-invit {
+	font-size: 40px;
+}
+/*Ver invitacion*/
 
 :root {
 	--background-color: #F3FFFA;
@@ -206,81 +229,6 @@ body.dark{
 }
 
 
-#tiles {
-	position: -webkit-fixed;
-	position: fixed;
-	height: 100%;
-	width: 100%;
-	display: -webkit-grid;
-	display: grid;
-	-webkit-grid-template-columns: repeat(var(--columns), 1fr);
-	grid-template-columns: repeat(var(--columns), 1fr);
-	-webkit-grid-template-rows: repeat(var(--rows), 1fr);
-	grid-template-rows: repeat(var(--rows), 1fr);
-	z-index: 200;
-}
-.tiles-title-container {
-	display: -webkit-grid;
-	display: grid;
-	height: 100vh;
-	width: 100vw;
-	height: -webkit-100vh;
-	height: 100vh;
-	width: -webkit-100vw;
-	width: 100vw;
-	-webkit-place-items: center;
-	place-items: center;
-	position: absolute;
-}
-.tiles {
-	position: -webkit-fixed;
-	position: fixed;
-	font-size: 45px;
-	color: var(--text-color-dorado);
-	-webkit-transform: scale(1.0);
-	transform: scale(1.0);
-	-webkit-transition: -webkit-transform .4s;
-	transition: transform .4s;
-	z-index: 300
-}
-.title-tiles {
-	transform: scale(0);
-}
-.tile-grid__container2 {
-	animation: background-pan 10s linear infinite;
-	height: 100%;
-	width: 100%;
-	background: linear-gradient(
-		to right,
-		var(--c1),
-		var(--c2),
-		var(--c1)
-	);
-	background-size: 200%;
-}
-@keyframes background-pan {
-	from {
-		background-position: 0% center;
-	}
-
-	to {
-		background-position: -200% center;
-	}
-}
-.tile2 {
-	position: relative;
-}
-.tile2:before {
-	height: calc(100% - 0px);
-	width: calc(100% - 0px);
-}
-.tile2:before {
-	background-color: #fff;
-	outline: 0.1px solid #d4a41340;
-	content: "";
-	position: absolute;
-	inset: 1px;
-}
 
 .modal,.modal-2,.modal-3 {
 	background: #0006;
@@ -787,10 +735,6 @@ body.dark{
 	background-position: center;
 	background-size: cover;
 	background-repeat: no-repeat;
-	-webkit-background-repeat: no-repeat;
-	-webkit-background-size: cover;
-	-webkit-background-position: center;
-	-webkit-background-attachment: fixed;
 }
 .background__image {
 	background-image: url("../multimedia/images/gallery-image/transition/img-background-1.jpg");
