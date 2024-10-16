@@ -1,0 +1,482 @@
+<!DOCTYPE html>
+<html>
+<head>
+<head>
+   <meta charset="utf-8">
+   <meta name="keywords" content="Boda,boda,2023,Atlixco,atlixco,invitacion,Invitacion,digital,Digital">
+   <meta name="Invitacion Boda" content="Los esperamos en este dia especial">
+   <meta name="author" content="Red">
+   <meta name="copyright" content="mio.XD">
+   <meta name="robots" content="index">
+   <link rel="icon" href="multimedia/images/Fani-y-Migue.ico">
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+   <link rel="stylesheet" type="text/css" href="css/css_index_estilo.css">
+   <link rel="stylesheet" type="text/css" href="css/normalize.css">
+   <link rel="stylesheet" href="css/icofont.min.css">
+
+   <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet">
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+   <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@700&display=swap" rel="stylesheet"> 
+   <link href="https://fonts.googleapis.com/css2?family=Sen&display=swap" rel="stylesheet"> 
+   <link rel="preconnect" href="https://fonts.googleapis.com">
+   <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css2?family=Marck+Script&display=swap" rel="stylesheet">
+
+
+   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+   <script src="https://kit.fontawesome.com/28faa9840b.js" crossorigin="anonymous"></script>
+    <title>Nuestra boda</title>
+</head>
+<body class="body " >
+   <div class="loader-container"> 
+      <div class="anim-loader-container">
+        <div class="loading">
+          <div class="balls"></div>
+          <div class="balls"></div>
+          <div class="balls"></div>
+          <span class="texto-cargando">Cargando invitción...</span>
+       </div>
+      </div>
+   </div>
+   <span class="tiles-title-container"><h1 class="tiles ">Ver Invitacion</h1></span>
+   <span id="tiles" ></span>
+   <span class="modal off" hidden="true">
+      <span class="modal-img off-1">
+         <img src="" class="modal-img-front">
+         <img src="multimedia/images/icons/close.svg" class="close__image-icon">
+      </span>
+   </span>
+   <span class="modal-2 off" hidden="true">
+      <span class="modal-gift off-2">
+         <span class="data-info gift-info ">
+         </span>
+      </span>
+   </span>
+   <span class="modal-3 off" hidden="true">
+      <span class="modal-confirm off-2">
+         <span class="data-info-2 confirm-info ">
+            <h3 class="title-gift-modal">Confirmar Asistencia</h3>
+            <h3 class="nombre-asistencia"></h3>
+            <div class="confirmar-familia"></div>
+            <form class="form-invitation">
+               <input type="text" id="number-input" class="invitation-number" required>
+               <label class="lbl-text">
+                  <span class="text-input">Número de invitacion</span>
+               </label>
+               <input type="submit" name="">
+            </form>
+            <div class="container__qr-generator ">
+               <div id="qr-container" class="qr-container "></div>
+            </div>
+            <span class="text-qr "><p></p></span>
+            <button class="btn-send">Confirmar</button>
+            <h3 class="title-gift-modal">Recuerda presentar este codigo en la recepcion</h3>
+         </span>
+      </span>
+   </span>
+   <span class="music-control">
+      <span class="music-container">
+         <i class="music-off play fa-solid fa-volume-xmark"></i>
+         <i class="music-on fa-solid fa-volume-low"></i>
+         <audio loop class="audio">
+           <source src="multimedia/audio/The-One-Kodaline-Piano.mp3" type="audio/mpeg">
+         </audio>
+         <audio loop class="audio-2">
+           <source src="multimedia/audio/115.mp3" type="audio/mpeg">
+         </audio>
+      </span>
+   </span>
+   <header>
+      <div class="div__menu-container">
+            <div class="menu__container">
+               <span class="i__open i__menu"><img src="multimedia/images/icons/menu.svg" class="nav__icon"></span>
+               <span href="#" class="i__close i__menu"><img src="multimedia/images/icons/close.svg" class="nav__icon"></span>
+            </div>
+
+
+            <nav class="nav__container ">
+               <div class="nav__menu-container">
+                  <div class="i__moon i__container">
+                     <i class="fa-solid fa-moon dark-icon"></i>
+                  </div>
+
+                  <div class="i__sun i__container">
+                     <i class="fa-solid fa-sun dark-icon"></i>
+                      <span class="dark-mode-animation"></span>
+                  </div>
+
+                  <ul class="nav__ul">
+                        <li class="nav__li "><a href="#Presentacion" class="nav__a"><i class="fas fa-envelope"></i> Presentacion</a></li>
+                        <li class="nav__li "><a href="#Lugar" class="nav__a"><i class="fas fa-house"></i> Lugar</a></li>
+                        <li class="nav__li "><a href="#Galeria" class="nav__a"><i class="fas fa-photo-film"></i> Galeria</a></li>
+                        <li class="nav__li "><a href="#Programa"  class="nav__a"><i class="fas fa-calendar-days"></i> Programa</a></li>
+                        <li class="nav__li "><a href="#Mesa-de-regalos" class="nav__a"><i class="fas fa-gift"></i> Mesa de Regalos</a></li>
+                        <li class="nav__li "><a href="#Asistencia" class="nav__a"><i class="fas fa-qrcode"></i> Asistencia</a></li>
+                        <span></span>
+                  </ul>
+               </div>
+            </nav> 
+         </div>
+   </header>
+   <section id="Presentacion">
+      <div class="main__container">
+         <div class="div__container">
+            <h1 class="title__info">Andres y Anna</h1>
+            <div class="front__container-image">
+               <img src="multimedia/images/Front-image-1.png" class="front-img">
+            </div>
+            <h2 class="title-date">--------16 DE ABRIL 2023--------</h2>
+            <div class="text__container">
+               <p class="text" data-aos="fade-right">
+                  Ponme como un sello sobre tu corazón, como un sello sobre tu brazo, porque el amor es tan fuerte como la muerte.
+                  <!-- Habría preferido superar a otros en el conocimiento de lo que es excelente, que en la medida de mi poder y dominio. -->
+               </p>
+            </div>
+            <div class="countdown"></div>
+               <div class="agendar__container">
+                  <button id="agendarBtn" class="btn-agendar">Agendar Evento</button>
+               </div>
+               <div class="background__image">
+               </div>
+         </div>
+      </div>
+   </section>
+   <section>
+      <div class="main__container">
+         <div class="div__container">
+            <div class="text__container">
+               <p class="text " data-aos="fade-left">
+                  "Cuando te das cuenta de que quieres pasar el resto de tu vida con alguien, deseas que el resto de tu vida empiece lo antes posible"
+               </p>
+            </div>
+            <h2 class="title__info">Disfruten el evento</h2>
+            <div class="background__container-image">
+               <div class="background__image-2">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="Lugar">
+      <div class="main__container">
+         <div class="div__container lugar-grid">
+            <h2 class="title__horario-lugar">Horario & lugar</h2>
+            <div class="text__container-3 inicio-grid">
+               <h2 class="title__border-h2">Ceremonia</h2>
+               <p class="text">
+                  Salón social la NORIA.
+                  <br>
+                  <br>
+               </p>
+                  <h4>Inicio :</h4>
+               <p class="text">
+                  <br>
+                  1:00 pm
+                  <br>
+                  <br>
+               </p>
+                  <a class="btn-discurso" href="https://maps.app.goo.gl/HGc7B6TCcuZZXucP6" target="_BLANK">
+                     Ver Ubicacion
+                  </a>
+                  <div class="map-transition ">
+                     <div class="map-container">
+                           <iframe class="map-info" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d35880.813162381084!2d-98.24958555123949!3d19.041482386577524!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfc7332a039279%3A0x21d372281f2c6658!2sLA%20NORIA%20Eventos%20Sociales!5e0!3m2!1ses-419!2smx!4v1728533505417!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     </div>
+                  </div>
+                  <button class="btn-mapa si" >
+                     Mapa
+                  </button>
+            </div>
+                  
+           
+            <div class="text__container-3 banquete-grid">
+            <h2 class="title__border-h2 title__banquete">Recepcion </h2>
+               <p class="text">
+                  Salón Social Los Ahuehuetes
+                  <br>
+                  <br>
+               </p>
+                  <h4>Inicio :</h4>
+               <p class="text">
+                  <br>
+                  2:45 pm
+                  <br>
+                  <br>
+               </p>
+                  <a class="btn-discurso" href="https://g.page/LosAhuehuetes?share" target="_BLANK">
+                     Ver Ubicacion
+                  </a>
+                  <div class="map-transition2 ">
+                     <div class="map-container">
+                           <iframe class="map-info" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3774.312876655506!2d-98.4339134!3d18.9175404!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85cfb464408e012f%3A0x50066110c3489b4!2sSal%C3%B3n%20Social%20Los%20Ahuehuetes!5e0!3m2!1ses-419!2smx!4v1668742454908!5m2!1ses-419!2smx" width="400" height="300" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+                     </div>
+                  </div>
+                  <button class="btn-mapa si2" >
+                     Mapa
+                  </button>
+            </div>
+            <div class="background__container-image image-grid">
+               <div class="background__image-3">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section>
+      <div class="main__container hover">
+         <div class="div__container">
+            <h2 class="title__border-h2">Vestimenta</h2>
+            <h4 class="title-formal">Formal</h4>
+            <div class="img__container" data-aos="fade-up">
+               <img class="img-border img-outfit" src="https://assetsnffrgf-a.akamaihd.net/assets/m/501400102/univ/art/501400102_univ_cnt_3_xl.jpg">
+            </div>
+            <div class="img__container" data-aos="fade-up" data-aos-delay="250">
+               <img class="img-border img-outfit" src="https://assetsnffrgf-a.akamaihd.net/assets/m/501400102/univ/art/501400102_univ_cnt_2_xl.jpg">
+            </div>
+            <div class="background__container-image">
+               <div class="background__image-5">
+               </div>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="Galeria">
+      <div class="main__container hover">
+            <h2 class="gallery-title">Galeria</h2>
+         <div class="div__container gallery__container">
+            <div class="img__container" data-aos="fade-up">
+               <img class="img-border img-gallery"  src="multimedia/images/gallery-image/img-1.jpg" alt="img-1" loading="lazy">
+            </div>
+            <div class="img__container " data-aos="fade-up" data-aos-delay="250">
+               <img class="img-border img-gallery" src="multimedia/images/gallery-image/img-2.jpg" alt="img-2" loading="lazy">
+            </div>
+            <div class="img__container" data-aos="fade-up" data-aos-delay="300">
+               <img class="img-border img-gallery" src="multimedia/images/gallery-image/img-3.jpg" alt="img-3" loading="lazy">
+            </div>
+            <div class="img__container" data-aos="fade-up" data-aos-delay="350">
+               <img class="img-border img-gallery" src="multimedia/images/gallery-image/img-4.jpg" alt="img-4" loading="lazy">
+            </div>
+            <div class="img__container" data-aos="fade-up">
+               <img class="img-border img-gallery" src="multimedia/images/gallery-image/img-5.jpg" alt="img-5" loading="lazy">
+            </div>
+            <div class="img__container " data-aos="fade-up" data-aos-delay="250">
+               <img class="img-border img-gallery" src="multimedia/images/gallery-image/img-6.jpg" alt="img-6" loading="lazy">
+            </div>
+            <div class="img__container" data-aos="fade-up" data-aos-delay="300">
+               <img class="img-border img-gallery" src="multimedia/images/gallery-image/img-7.jpg" alt="img-7" loading="lazy">
+            </div>
+            <div class="img__container" data-aos="fade-up" data-aos-delay="350">
+               <img class="img-border img-gallery" src="multimedia/images/gallery-image/img-8.jpg" alt="img-8" loading="lazy">
+            </div>
+            <div class="img__container" data-aos="fade-up">
+               <img class="img-border img-gallery" src="multimedia/images/gallery-image/img-9.jpg" alt="img-9" loading="lazy">
+            </div>
+            <div class="img__container" data-aos="fade-up">
+               <img class="img-border img-gallery" src="multimedia/images/gallery-image/img-10.jpg" alt="img-10" loading="lazy">
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="Programa">
+      <div class="main__container hover">
+         <div class="div__container">
+            <h2>Programa</h2>
+
+            <div class="timeline__container">
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-1"></span>
+                  <i class="icofont-ui-home timeline-i" data-aos="fade-right" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-right">
+                  <br>
+                  Ceremonia
+                  <br>
+                  <br>
+                  <br>
+               </p>
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-2"></span>
+                  <i class="icofont-list timeline-i"data-aos="fade-left" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-left">
+                  <br>
+                  Recepcion
+                  <br>
+                  <br>
+                  <br>
+               </p>
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-3"></span>
+                  <i class="icofont-restaurant timeline-i"data-aos="fade-right" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-right">
+                  <br>
+                  Banquete
+                  <br>
+                  <br>
+                  <br>
+               </p>
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-4"></span>
+                  <i class="icofont-camera timeline-i"data-aos="fade-left" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-left">
+                  <br>
+                  Fotos
+                  <br>
+                  <br>
+                  <br>
+               </p>
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-10"></span>
+                  <i class="icofont-gift timeline-i"data-aos="fade-right" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-right">
+                  <br>
+                  Entrega de regalos
+                  <br>
+                  <br>
+                  <br>
+               </p>
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-7"></span>
+                  <i class="icofont-candy timeline-i"data-aos="fade-right" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-right">
+                  <br>
+                  Mesa de dulces
+                  <br>
+                  <br>
+                  <br>
+               </p>
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-5"></span>
+                  <i class="icofont-retro-music-disk timeline-i"data-aos="fade-right" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-right">
+                  <br>
+                  Vals
+                  <br>
+                  <br>
+                  <br>
+               </p>
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-6"></span>
+                  <i class="icofont-music-notes timeline-i"data-aos="fade-left" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-left">
+                  <br>
+                  Apertura del baile
+                  <br>
+                  <br>
+                  <br>
+               </p>
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-8"></span>
+                  <i class="icofont-layered-cake timeline-i"data-aos="fade-left" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-left">
+                  <br>
+                  Pastel
+                  <br>
+                  <br>
+                  <br>
+               </p>
+               <div class="timeline__container-i">
+                  <span class="timeline-badge badge-9"></span>
+                  <i class="icofont-logout timeline-i"data-aos="fade-right" data-aos-duration="1800"></i>
+               </div>
+               <p class="text" data-aos="fade-right">
+                  <br>
+                  Fin
+                  <br>
+                  <br>
+                  <br>
+               </p>
+            </div>
+   </section>
+   <section id="Mesa-de-regalos">
+      <div class="main__container">
+         <div class="background__container-image">
+            <div class="background__image-6">
+            </div>
+         </div>
+         <div class="div__container">
+            <h1 class="">Mesa de regalos</h1>
+            <div class="text__container">
+               <p class="text" data-aos="fade-left">
+                  Si desean apoyarnos de forma económica en el inicio de nuestra nueva aventura como familia, ponemos a su dispocision estos enlaces.
+               </p>
+            </div>
+            <div class="gift__container">
+               <i class="fa-brands fa-cc-visa gift-i"></i>
+               <button class="btn-gift c-visa" data-aos="fade-right" data-aos-duration="1600">Regalar</button>
+            </div>
+            <div class="gift__container">
+               <i class="fa-brands fa-cc-paypal gift-i"></i>
+               <button class="btn-gift c-paypal" data-aos="fade-left" data-aos-duration="1600">Regalar</button>
+            </div>
+         </div>
+      </div>
+   </section>
+   <section id="Asistencia">
+      <div class="main__container">
+         <div class="background__container-image">
+            <div class="background__image-4">
+            </div>
+         </div>
+         <div class="div__container">
+            <h1 class="">Asistencia</h1>
+            <div class="text__container">
+               <p class="text" data-aos="fade-left">
+                 Agradecemos mucho su apoyo y su generosidád! Pero lo más importante para nosostros es que formen parte de esta ocasión especial. ¡Los esperamos!
+               </p>
+            </div>
+            <div class="confirm__container">
+               <button class="btn-confirm " data-aos="fade-up" data-aos-duration="1600">Confirmar Asistencia</button>
+            </div>
+         </div>
+      </div>
+      <div class="background__container-image">
+            <div class="background__image">
+            </div>
+      </div>
+   </section>
+   <footer class="footer">
+      <h4 class="title-footer">Diseñador</h4>
+      <div class="container-btn-contact-me">
+         <button class="btn-contact-me">Contactar</button>
+      </div>
+      <div class="container-contact">
+         <h3 class="title-gift-modal">Número de contacto</h3>
+         <p>Correo: 2b2t115@gmail.com</p>
+         <p>Número: +52 244 105 6814</p>
+      </div>
+   </footer>
+<!----======== JS ======== -->
+   <!-- <script type="text/JavaScript">
+     function submitForm(event){
+       event.preventDefault();
+       window.history.back();
+     } -->
+</script>
+   <script src="js/dark-mode__script.js"></script>
+   <script src="js/menu__script.js"></script>
+   <script src="js/simplyCountdown.min.js"></script>
+   <script src="js/countdown.js"></script>
+   <script src="js/gallery__script.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js"></script>
+   <script src="js/gift__script.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="js/anime.min.js"></script>
+   <script src="js/animate__script.js"></script>
+   <script>
+      AOS.init({
+         duration: 800
+      });
+   </script>
+<!----======== JS ======== --> 
+</body>
+</html>
