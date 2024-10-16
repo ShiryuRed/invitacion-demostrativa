@@ -27,9 +27,7 @@ h2 {
 	letter-spacing: 1px;
 }
 
-div {
-	
-}
+
 h4 {
 	color: var(--title-color);
 	text-align: center;
@@ -368,6 +366,12 @@ body.dark{
 	width: 100%;
 	padding: 4px 0;
 	border-bottom: 1px solid var(--text-color);
+}
+
+.spotify-song-container {
+	margin: 10px;
+} .spotify-song-container > iframe {
+	outline: 5px double var(--text-color-dorado);
 }
 /*/////////////////Button Menu////////////////*/
 .div__menu-container {
