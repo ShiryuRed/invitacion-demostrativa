@@ -207,12 +207,15 @@ body.dark{
 
 
 #tiles {
+	position: -webkit-fixed;
 	position: fixed;
 	height: 100%;
 	width: 100%;
-
+	display: -webkit-grid;
 	display: grid;
+	-webkit-grid-template-columns: repeat(var(--columns), 1fr);
 	grid-template-columns: repeat(var(--columns), 1fr);
+	-webkit-grid-template-rows: repeat(var(--rows), 1fr);
 	grid-template-rows: repeat(var(--rows), 1fr);
 	z-index: 200;
 }
@@ -779,10 +782,14 @@ body.dark{
 .background__image-6 {
 	height: 400px;
 	width: 100vw;
+	-webkit-background-attachment: fixed;
 	background-attachment: fixed;
+	-webkit-background-position: center;
 	background-position: center;
-	background-size: cover; 
-	background-repeat: no-repeat;
+	-webkit-background-size: cover;
+	background-size: cover;
+	-webkit-background-repeat: no-repeat;
+	background-repeat: 
 }
 .background__image {
 	background-image: url("../multimedia/images/gallery-image/transition/img-background-1.jpg");
