@@ -127,6 +127,7 @@ audio.volume = 0.5;
 
 const musicStart = () => {
   audio.play();
+  audioStop.classList.add("play");
 }
 
  window.addEventListener("blur", () => {

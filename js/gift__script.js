@@ -79,7 +79,9 @@ function showContactInfo() {
         let newHtmlCode = `
             <h3 class="title-gift-modal">Numero de contacto</h3>
             <p>Correo: 2b2t115@gmail.com</p>
-            <p>Numero: +52 244 105 6814</p>`;
+            <p>Numero: +52 244 104 3578</p>
+            <button class='contact-me-whats'>WhatsApp</button>`;
+            
         dataInfo.innerHTML += newHtmlCode;
     }
 }

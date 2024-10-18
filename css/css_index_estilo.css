@@ -277,13 +277,13 @@ body.dark{
 .modal-gift,.modal-confirm {
 	position: fixed;
 	min-height: 75%;
-	min-width: 95%;
+	min-width: 80%;
 	transform: translateY(0);
 	transition: transform .4s;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	max-width: 900px;
+	max-width: 90%;
 }
 .data-info,.data-info-2 {
 	background: var(--background-page);
@@ -293,8 +293,8 @@ body.dark{
 	flex-direction: column;
 	align-items: center;
 	justify-items: space-between;
-	gap: 30px;
-	padding: 30px 2px;
+	gap: 20px;
+	padding: 20px 2px;
 	border-radius: 10px;
 	flex-wrap: wrap;
 	outline: 2px solid var(--text-color-dorado);
@@ -311,12 +311,15 @@ body.dark{
 	font-size: 20px;
 }
 
-.title-gift-modal {
+.title-gift-modal-h3, .title-gift-modal-h5 {
 	color: var(--title-color);
 	text-align: center;
 	width: 100%;
-	padding: 4px 0;
+	padding: 3px 0;
+}.title-gift-modal-h3 {	
 	border-bottom: 1px solid var(--text-color);
+}.title-gift-modal-h5 {	
+	border-top: 1px solid var(--text-color);
 }
 
 .spotify-song-container {
@@ -932,89 +935,42 @@ body.dark{
 	background: var(--background-page);
 }
 
-.footer {
-	font-family: sen;
-	display: grid;
-	place-items: center;
-}
-.footer > h4 {
-	color: var(--text-color-dorado);
-	font-size: 20px;
-}
-.footer > a {
-	color: #990;
-	font-size: 20px;
-}
-.title-footer {
-	margin: 10px;
-}
-.container-btn-contact-me {
-	padding: 8px;
-}
-
+/* Footer */
 .btn-contact-me {
-	background: #222;
-	border: 3px solid #999;
-	padding: 10px;
-	border-radius: 16px;
+	background-color: transparent;
+	border: none;
+	border-bottom: 3px solid #d4a413;
 	transition: transform .4s;
+	border-radius: 10px;
 	color: #fff;
+	padding: 0px 15px;
 }
 .btn-contact-me:active {
 	transform: scale(.8);
 }
 
-
-
-.container-contact{
-    height: 350px;
-    width: 320px;
-    background-color: #101010;
-    border-radius: 10%;
-    box-shadow: 16px 14px 20px #0000008c;
-    position: relative;
-    overflow: hidden;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    gap: 30px;
-    padding: 10px;
+.footer {
+	font-family: sen;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	background-color: #000000;
+	padding: 10px;
+}
+.a-inv-click {
+	color: #fff;
+}
+.a-inv-click > h5 > b {
+	color: #d4a413;
 }
 
-.container-contact::before{
-    content: "";
-    position: absolute;
-    height: 600px;
-    width: 600px;
-    background-image: conic-gradient(#f00 20deg, transparent 120deg);
-    animation: rotar 2s linear infinite;
-}
 
-@keyframes rotar{
-    from{
-        transform: rotate(0deg);
-    }
-    to{
-        transform: rotate(-360deg);
-    }
-}
 
-.container-contact::after{
-    content: "";
-    position: absolute;
-    height: 340px;
-    width: 310px;
-    background-color: #101010;
-    border-radius: 10%;
-    box-shadow: inset 16px 14px 20px #0000008c;;
-}
 
-.container-contact > p, .container-contact > h3 {
-	z-index: 100;
-	color: #48e;
-	margin: 0 10px;
-}
+
+/* Footer */
+
 
 
 /*/////////////////Asistencia////////////////*/
