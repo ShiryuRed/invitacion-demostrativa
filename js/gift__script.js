@@ -217,7 +217,7 @@ invitationNumber.addEventListener("input", (e) => {
         invalidId = true;
     }
     numberId = parseInt(number);
-    qrId = numberId / 4 -1237;
+    qrId = numberId / 3 -1428;
     Math.trunc(qrId);
     invalidId = false; 
     if (Number.isInteger(qrId) == false) {
@@ -244,16 +244,30 @@ sendButton.addEventListener("click", (e) => {
             let nombre = invitados[qrId]["nombre"];
             let personas = invitados[qrId]["personas"];
             let mesa = invitados[qrId]["mesa"];
+            let pases = invitados[qrId]['baile']
         
-            let qrText =`Fam: ${nombre}, Pases: ${personas}, Mesa: ${mesa}`;
+            let qrText =`Fam: ${nombre}, Pases: ${personas}, Mesa: ${mesa}, Pase baile ${pases}`;
             let confirmar = confirm(`¿Confirmar ${number} como numero de invitacion?`);
             if (confirmar) {
                 confirmInfo.removeChild(sendButton);
                 qrContainerStyle.classList.add("anim-qr");
                 QR.makeCode(qrText);
-                let newHtmlCodeFam = `
-                    <h3> ${nombre}</h3>`;
+                if (pases == '0') {
+                    let newHtmlCodeFam = `
+                    <h3> ${nombre}</h3>
+                    <h5>Tu mesa es <span class="span-text-modal">${mesa}</span> </h5>
+                    <h5>Tienes: <span class="span-text-modal">${personas}</span> pases</h5>`;
                 confirmarFamilia.innerHTML += newHtmlCodeFam;
+                } if (pases != '0') {
+                    let newHtmlCodeFam = `
+                    <h3> ${nombre}</h3>
+                    <h5>Tu mesa es <span class="span-text-modal">${mesa}</span> </h5>
+                    <h5>Tienes: <span class="span-text-modal">${personas}</span> pases</h5>
+                    <h5>Tus pases para el baile son: <span class="span-text-modal">${pases}</span><h5/>
+                    <h4>Recuerda que la entrada al baile es 5:30 pm<h4/>`;
+                    confirmarFamilia.innerHTML += newHtmlCodeFam;
+                }
+                
             }
         }
     }
@@ -276,8 +290,9 @@ formI.addEventListener("submit", (e) => {
             let nombre = invitados[qrId]["nombre"];
             let personas = invitados[qrId]["personas"];
             let mesa = invitados[qrId]["mesa"];
+            let pases = invitados[qrId]['baile'];
         
-            let qrText =`Fam: ${nombre}, Pases: ${personas}, Mesa: ${mesa}`;
+            let qrText =`Fam: ${nombre}, Pases: ${personas}, Mesa: ${mesa}, baile: ${pases}`;
             let confirmar = confirm(`¿Confirmar ${number} como numero de invitacion?`);
             if (confirmar) {
                 confirmInfo.removeChild(sendButton);
@@ -297,7 +312,11 @@ for (let i = 0; i <= 150; i++) {
     let loc = (1237 + i) * 4 ;
     document.write(loc + `<br>`)
 }*/
-
+/*
+for (let i = 0; i <= 100; i++) {
+    let loc = (1428 + i) * 3 ;
+    document.write(loc + `<br>`)
+}*/
 
 // for (let i = 0; i <= invitados.length; i++) {
 //     let loc = (1237 + i) * 4 ;
@@ -310,128 +329,93 @@ for (let i = 0; i <= 150; i++) {
 // }
 
 
-
-
-
-
-const invitados = [{ nombre: "Migue&Fani", personas: "2", mesa: "Principal"}   
-,{nombre: "Lopez Santos", personas: "2", mesa: "A4"}
-,{ nombre: "Vicente Santos", personas: "3", mesa: "A4"}
-,{ nombre: "Alejandro Santos", personas: "5", mesa: "A4"}
-,{ nombre: "Benjamin Frankis", personas: "3", mesa: "C3"}
-,{ nombre: "Empty", personas: "cancelado", mesa: "00"}
-,{ nombre: "Nancy Matus", personas: "3", mesa: "E5"} 
-,{ nombre: "Fran", personas: "3",  mesa: "E5"}
-,{ nombre: "Garcia Santos", personas: "3", mesa: "B5"}
-,{ nombre: "Viany Garcia Santos", personas: "2", mesa: "B5"}
-,{ nombre: "Liz Garcia", personas: "4", mesa: "B5"}
-,{ nombre: "Olga Santos", personas: "1", mesa: "B5"}
-,{ nombre: "Izquierdo Hernandez", personas: "4", mesa: "D2"} 
-,{ nombre: "Pech Izquierdo", personas: "2",  mesa: "D2"}
-,{ nombre: "Rocha Tapia", personas: "3", mesa: "E2"}
-,{ nombre: "Mello", personas: "3", mesa: "D5"}
-,{ nombre: "Tapia Hernandez", personas: "2", mesa: "B2"}
-,{ nombre: "Arely Aguilar", personas: "1", mesa: "A5"}
-,{ nombre: "Martinez Vidal", personas: "4", mesa: "C2"} 
-,{ nombre: "Flores Tapia", personas: "4", mesa: "E2"} 
-,{ nombre: "Eunice Tapia", personas: "1",  mesa: "B2"}
-,{ nombre: "Rosalba Tapia", personas: "1", mesa: "B2"}
-,{ nombre: "Torres Tapia", personas: "4", mesa: "D1"}
-,{ nombre: "Morales Garcia", personas: "3", mesa: "A3"}
-,{ nombre: "De Jesus Reyes", personas: "2", mesa: "D3"}
-,{ nombre: "Garin", personas: "4", mesa: "A3"}
-,{ nombre: "Ramirez Limon", personas: "2",  mesa: "D6"}
-,{ nombre: "Quechol Arroyo", personas: "2", mesa: "A6"}
-,{ nombre: "Hernandez Quechol", personas: "4", mesa: "A6"}
-,{ nombre: "Quechol Cuautle", personas: "2", mesa: "A6"}
-,{ nombre: "Quechol Hernandez", personas: "3", mesa: "D6"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"} 
-,{ nombre: "Saul Lopez", personas: "4",  mesa: "B1"}
-,{ nombre: "Yaz", personas: "1", mesa: "E3"}
-,{ nombre: "Victor Tlacuilo", personas: "1", mesa: "B3"}
-,{ nombre: "Arnulfo Hernandez", personas: "2", mesa: "C1"}
-,{ nombre: "Andrea Tlacuilo", personas: "1", mesa: "Principal"}
-,{ nombre: "Miguel Perez", personas: "1", mesa: "D5"} 
-,{ nombre: "Espinoza Vazques", personas: "3",  mesa: "B1"}
-,{ nombre: "Lopez Tapia", personas: "3", mesa: "D1"}
-,{ nombre: "Gomez Lopez", personas: "2", mesa: "D1"}
-,{ nombre: "Fani Duran", personas: "3", mesa: "E6"}
-,{ nombre: "Samuel Flores", personas: "4", mesa: "B2"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"} 
-,{ nombre: "Andrade Ruiz", personas: "3",  mesa: "D3"}
-,{ nombre: "Sanchez Xelo", personas: "2", mesa: "E4"}
-,{ nombre: "Sanchez Zamora", personas: "3", mesa: "E4"}
-,{ nombre: "Gomez Zamorano", personas: "2", mesa: "B2"}
-,{ nombre: "Elba Reyes", personas: "2", mesa: "E6"}
-,{ nombre: "Mario Olguin", personas: "2", mesa: "A3"} 
-,{ nombre: "Reyna Romero", personas: "3",  mesa: "D5"}
-,{ nombre: "Ventura", personas: "3", mesa: "D5"}
-,{ nombre: "Villegas", personas: "2", mesa: "C2"}
-,{ nombre: "De la Flor", personas: "6", mesa: "A5"}
-,{ nombre: "Dominguez Gonzales", personas: "2", mesa: "C2"}
-,{ nombre: "Maldonado Bustamante", personas: "2", mesa: "C2"} 
-,{ nombre: "Maldonado Jimenez", personas: "5",  mesa: "E4"}
-,{ nombre: "Gonzales Bustamante", personas: "6", mesa: "B6"}
-,{ nombre: "Francisco Sanchez", personas: "1", mesa: "A3"}
-,{ nombre: "Reyes Barragan", personas: "3", mesa: "D3"}
-,{ nombre: "Isauro Coatl", personas: "4", mesa: "C1"}
-,{ nombre: "Tlacuilo Santos", personas: "2", mesa: "A2"} 
-,{ nombre: "Tlacuilo Diaz", personas: "5",  mesa: "A2"}
-,{ nombre: "EMPTY", personas: "00", mesa: "00"}
-,{ nombre: "Flores Vargas", personas: "4", mesa: "C3"}
-,{ nombre: "Morales Juarez", personas: "4", mesa: "D2"}
-,{ nombre: "Tapia Lozada", personas: "3", mesa: "E2"}
-,{ nombre: "Goldring Ruiz", personas: "2", mesa: "D3"} 
-,{ nombre: "Esperanza Balderas", personas: "1",  mesa: "D1"}
-,{ nombre: "Bonifacia Bravo", personas: "2", mesa: "D4"}
-,{ nombre: "Rubalcaba Baez", personas: "2", mesa: "E3"}
-,{ nombre: "Canales Flores", personas: "3", mesa: "E5"}
-,{ nombre: "Tlacuilo Miguel", personas: "3", mesa: "A2"} 
-,{ nombre: "Molina Tlacuilo", personas: "2",  mesa: "B3"}
-,{ nombre: "Espinoza Vazquez", personas: "3", mesa: "B1"}
-,{ nombre: "Artur", personas: "1", mesa: "Personal"}
-,{ nombre: "Canahuete Jimenez", personas: "3", mesa: "C3"}
-,{ nombre: "Perez Ramos", personas: "5", mesa: "E1"} 
-,{ nombre: "Michelle", personas: "0",  mesa: "En Linea"}
-,{ nombre: "Calderon Velazquez", personas: "2", mesa: "E1"}
-,{ nombre: "Soledad Castulo", personas: "5", mesa: "E6"}
-,{ nombre: "Hernandez Tapia", personas: "2", mesa: "Principal"}
-,{ nombre: "Tlacuilo Chabacano", personas: "3", mesa: "Principal"} 
-,{ nombre: "Javier Frankis", personas: "4",  mesa: "B3"}
-,{ nombre: "Karla Tendero", personas: "1", mesa: "A5"}
-,{ nombre: "Jona y Joss", personas: "3", mesa: "E2"}
-,{ nombre: "Jehu y Jesus Sanchez", personas: "2", mesa: "B4"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"} 
-,{ nombre: "Hugo Reynoso", personas: "3",  mesa: "D4"}
-,{ nombre: "Gonzales Vazquez", personas: "2", mesa: "B4"}
-,{ nombre: "Vazquez Medina", personas: "3", mesa: "B4"}
-,{ nombre: "Luna", personas: "2", mesa: "D3"}
-,{ nombre: "Jimenez", personas: "2", mesa: "D3"} 
-,{ nombre: "Natalia Sanchez", personas: "1",  mesa: "A5"}
-,{ nombre: "Quinto", personas: "2", mesa: "D4"}
-,{ nombre: "Hernandez Torres", personas: "2", mesa: "A1"}
-,{ nombre: "Hernandez Hernandez", personas: "4", mesa: "A1"}
-,{ nombre: " ", personas: "0", mesa: "00"} 
-,{ nombre: "Jesus Campos", personas: "1",  mesa: "A5"}
-,{ nombre: "Hernandez Flores", personas: "4", mesa: "A1"}
-,{ nombre: "Piz Steffanoni", personas: "5", mesa: "E3"}
-,{ nombre: "Edgar Enriquez", personas: "2", mesa: "B3"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"}
-,{ nombre: "Perez Galeno", personas: "5", mesa: "D6"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"}
-,{ nombre: "Bertita", personas: "1", mesa: "B3"}
-,{ nombre: "Dario Sanchez", personas: "1", mesa: "E3"}
-,{ nombre: "Angeles Perez", personas: "2", mesa: "B4"}
-,{ nombre: "Aurelio Castillo", personas: "1", mesa: "E3"}
-,{ nombre: "Claudia Ibeth", personas: "4", mesa: "E5"}
-,{ nombre: "Hernandez Ruiz", personas: "4", mesa: "B6"}
-,{ nombre: "Hector Cuautle", personas: "2", mesa: "A6"}
-,{ nombre: "Angel Canales", personas: "3", mesa: "E1"}
-,{ nombre: "Monica Arroyo", personas: "1", mesa: "E3"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"}
-,{ nombre: "EMPTY", personas: "0", mesa: "00"}
-,{ nombre: "Hernandez Juarez", personas: "4", mesa: "C1"}];
+const invitados = [{nombre: "Concha Mendez", personas: "3", mesa: "1", baile: "5"}   
+,{nombre: "Garcia Visencio", personas: "4", mesa: "1", baile: "6"}
+,{ nombre: "Gonzalez Rivera", personas: "3", mesa: "1" , baile: "3"}
+,{ nombre: "Campos Ruiz", personas: "5", mesa: "2", baile: "5"}
+,{ nombre: "Ruiz Garcia", personas: "2", mesa: "2", baile: "0"}
+,{ nombre: "Ruiz Flores", personas: "2", mesa: "2", baile: "0"}
+,{ nombre: "Vergara Concha", personas: "2", mesa: "3", baile: "0"} 
+,{ nombre: "Barela Concha", personas: "4",  mesa: "3", baile: "0"}
+,{ nombre: "Ruben Concha", personas: "1", mesa: "3", baile: "0"}
+,{ nombre: "Rosario Rivera", personas: "1", mesa: "3", baile: "0"}
+,{ nombre: "Soledad Rivera", personas: "1", mesa: "3", baile: "0"}
+,{ nombre: "Felipa Morales", personas: "1", mesa: "3", baile: "0"}
+,{ nombre: "Campos Fierro", personas: "5", mesa: "4", baile: "0"} 
+,{ nombre: "Campos Palacio", personas: "4",  mesa: "4", baile: "0"}
+,{ nombre: "Lore Merino", personas: "2", mesa: "5", baile: "0"}
+,{ nombre: "Hernandez Ruiz", personas: "4", mesa: "5", baile: "0"}
+,{ nombre: "Veronica Coronel", personas: "2", mesa: "5", baile: "0"}
+,{ nombre: "Manuel De Jesus", personas: "2", mesa: "5", baile: "0"}
+,{ nombre: "Delgado Vazquez", personas: "2", mesa: "6", baile: "0"} 
+,{ nombre: "Hernandez Perez", personas: "3", mesa: "6", baile: "0"} 
+,{ nombre: "Flores Serrano", personas: "2",  mesa: "6", baile: "0"}
+,{ nombre: "Fierro Fierro", personas: "3", mesa: "4 y 6", baile: "0"}
+,{ nombre: "Flores Infante", personas: "2", mesa: "7", baile: "0"}
+,{ nombre: "Conchita Infante", personas: "2", mesa: "7", baile: "4"}
+,{ nombre: "Jimenez Vidals", personas: "3", mesa: "7", baile: "0"}
+,{ nombre: "Rosas Madeline", personas: "3", mesa: "7", baile: "2"}
+,{ nombre: "Flores Sanchez", personas: "4",  mesa: "8", baile: "0"}
+,{ nombre: "Calderon", personas: "3", mesa: "8", baile: "0"}
+,{ nombre: "Flores Santos", personas: "2", mesa: "8", baile: "4"}
+,{ nombre: "Raquel Flores", personas: "1", mesa: "8", baile: "0"}
+,{ nombre: "Paulino Montalvo", personas: "1", mesa: "9", baile: "0"}
+,{ nombre: "Abraham Mendez", personas: "1", mesa: "9", baile: "0"} 
+,{ nombre: "Barranco", personas: "3",  mesa: "9", baile: "0"}
+,{ nombre: "Sara Mendez", personas: "1", mesa: "9", baile: "0"}
+,{ nombre: "America Martinez", personas: "2", mesa: "9", baile: "3"}
+,{ nombre: "Monica y Agustin", personas: "2", mesa: "9", baile: "0"}
+,{ nombre: "Tepepa Flores", personas: "2", mesa: "10", baile: "0"}
+,{ nombre: "Garcia", personas: "2", mesa: "10", baile: "0"} 
+,{ nombre: "Soledad Romero", personas: "2",  mesa: "10", baile: "0"}
+,{ nombre: "Castro Gutierrez", personas: "4", mesa: "10", baile: "0"}
+,{ nombre: "Romero Rodriguez", personas: "2", mesa: "11", baile: "0"}
+,{ nombre: "Vargas Romero", personas: "2", mesa: "11", baile: "0"}
+,{ nombre: "Martinez Perez", personas: "6", mesa: "11", baile: "2"}
+,{ nombre: "Guerra Lopez", personas: "5", mesa: "12", baile: "10"} 
+,{ nombre: "Vega Lopez", personas: "1",  mesa: "12", baile: "0"}
+,{ nombre: "Allende Solano", personas: "2", mesa: "12", baile: "0"}
+,{ nombre: "Torres Medel", personas: "2", mesa: "12", baile: "0"}
+,{ nombre: "Mantilla Larios", personas: "7", mesa: "13", baile: "0"}
+,{ nombre: "Miriam Morales", personas: "3", mesa: "13", baile: "3"}
+,{ nombre: "Ramirez Hernandez", personas: "2", mesa: "14", baile: "8"} 
+,{ nombre: "Rodriguez Hernandez", personas: "3",  mesa: "14", baile: "0"}
+,{ nombre: "Hernandez Tlacuilo", personas: "4", mesa: "14", baile: "7"}
+,{ nombre: "Oscar Garin", personas: "1", mesa: "14", baile: "0"}
+,{ nombre: "Gonzalez", personas: "4", mesa: "15", baile: "0"}
+,{ nombre: "Ahuehuetl", personas: "4", mesa: "15", baile: "0"}
+,{ nombre: "Leon Quintero", personas: "2", mesa: "15", baile: "3"} 
+,{ nombre: "Hurtado Miranda", personas: "2",  mesa: "16", baile: "0"}
+,{ nombre: "Torres Guerra", personas: "2", mesa: "16", baile: "0"}
+,{ nombre: "Garcia Sanchez", personas: "5", mesa: "16", baile: "0"}
+,{ nombre: "Eva Flores", personas: "1", mesa: "16", baile: "0"}
+,{ nombre: "Remigio Gallegos", personas: "2", mesa: "17", baile: "0"}
+,{ nombre: "Rosamaria", personas: "2", mesa: "17", baile: "0"} 
+,{ nombre: "Walter", personas: "2",  mesa: "17", baile: "0"}
+,{ nombre: "Concepcion Carbente", personas: "1", mesa: "22", baile: "0"}
+,{ nombre: "Hidalgo", personas: "3", mesa: "17", baile: "0"}
+,{ nombre: "Flores Tapia", personas: "5", mesa: "18", baile: "0"}
+,{ nombre: "Rocha Tapia", personas: "3", mesa: "18", baile: "0"}
+,{ nombre: "Tendero Quintero", personas: "2", mesa: "18", baile: "0"} 
+,{ nombre: "Roque Ortega", personas: "3",  mesa: "19", baile: "0"}
+,{ nombre: "Tepepa Xique", personas: "2", mesa: "19", baile: "2"}
+,{ nombre: "Tellez", personas: "5", mesa: "19", baile: "0"}
+,{ nombre: "Torres Tapia", personas: "4", mesa: "20", baile: "5"}
+,{ nombre: "Mireya Campos", personas: "3", mesa: "20", baile: "0"} 
+,{ nombre: "Rivera Perez", personas: "3",  mesa: "20", baile: "0"}
+,{ nombre: "Lucia", personas: "1", mesa: "21", baile: "0"}
+,{ nombre: "Martinez Sanchez", personas: "2", mesa: "21", baile: "0"}
+,{ nombre: "Jabin Leon", personas: "2", mesa: "21", baile: "0"}
+,{ nombre: "Sanchez Bravo", personas: "2", mesa: "21", baile: "0"} 
+,{ nombre: "Angel Cardozo", personas: "1",  mesa: "22", baile: "0"}
+,{ nombre: "Najera Leon", personas: "2", mesa: "22", baile: "0"}
+,{ nombre: "Jonathan Martinez", personas: "2", mesa: "22", baile: "0"}
+,{ nombre: "Rojas Arellano", personas: "3", mesa: "22", baile: "0"}
+,{ nombre: "Clara Sanchez", personas: "1", mesa: "22", baile: "0"}
+,{ nombre: "Hoyos", personas: "2", mesa: "6", baile: "0"}
+,{ nombre: "Navarrete Rendon", personas: "2", mesa: "10", baile: "0"}
+,{ nombre: "Hernandez Mendez ", personas: "4", mesa: "17", baile: "2"}
+,{ nombre: "EMPTY", personas: "0", mesa: "00", baile: "0"}
+,{ nombre: "EMPTY", personas: "0", mesa: "00", baile: "0"}
+,{ nombre: "EMPTY", personas: "0", mesa: "00", baile: "0"}
+];

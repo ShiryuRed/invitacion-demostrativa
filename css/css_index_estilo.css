@@ -600,6 +600,7 @@ body.dark{
 }
 .img-gallery:active,.img-outfit:active {
 	transform: scale(.94);
+	-webkit-transform: scale(.94);
 }
 
 .title-formal {
@@ -900,9 +901,19 @@ body.dark{
 	font-size: 18px;
 }
 .confirmar-familia {
-	color: var(--text-color-dorado);
-	margin-top: -20px;
+	color: var(--text-color);
+	margin-top: -30px;
 	border-bottom: 3px solid #7d0a1e;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin-bottom: 5px;
+}.confirmar-familia > h3 {
+	color: var(--text-color-dorado);
+}
+.span-text-modal {
+	color: var(--text-color-dorado);
 }
 .btn-confirm {
 	border: 3px solid var(--text-color-dorado);
